@@ -6,9 +6,7 @@ class Solution {
             if(nums[left] == target || nums[right] == target){ 
             return true;
             } else if(target > nums[left]){
-                if(left < right && nums[left +1] == nums[left]){
-                    left ++;
-                }
+                if(left < right && nums[left +1] == nums[left]) left ++;
                 left ++;
             } else if (target < nums[right]){
                 if( right< left && nums[right -1] == nums[right]) right--;
