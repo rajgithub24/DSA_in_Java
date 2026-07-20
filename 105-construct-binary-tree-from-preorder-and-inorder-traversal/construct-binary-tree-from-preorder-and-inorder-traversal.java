@@ -15,11 +15,11 @@
  */
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return helper(0, 0, inorder.length-1, preorder, inorder);
+        return helper(preorder, inorder, 0, inorder.length-1, 0);
     }
-    public TreeNode helper(int prestart, int Start, int End, int[] preorder, int[] inorder){
-        if(prestart > preorder.length-1 || Start > End) return null;
-        TreeNode root = new TreeNode(preorder[prestart]);
+    public TreeNode helper(int[] preorder, int[] inorder, int Start, int End, int idx){
+        if(idx > preorder.length-1 || Start > End) return null;
+        TreeNode root = new TreeNode(preorder[idx]);
         
         int inIndex = 0;
         for(int i = Start ; i <= End; i++ ){
@@ -28,8 +28,8 @@ class Solution {
             }
         }
         
-        root.left = helper(prestart +1, Start, inIndex-1, preorder, inorder);
-        root.right = helper(prestart + inIndex - Start +1, inIndex+1, End, preorder, inorder);
+        root.left = helper(preorder, inorder, Start, inIndex-1, idx +1);
+        root.right = helper(preorder, inorder, inIndex+1, End, idx + inIndex - Start +1);
         return root;
     }
 }
