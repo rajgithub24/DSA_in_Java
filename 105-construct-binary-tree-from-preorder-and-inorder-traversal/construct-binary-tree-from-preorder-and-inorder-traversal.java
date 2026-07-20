@@ -19,15 +19,13 @@ class Solution {
     }
     private TreeNode helper(int[] preorder, int[] inorder, int Start, int End, int idx){
         if(Start > End) return null;
-        TreeNode root = new TreeNode(preorder[idx]);
-        
+        TreeNode root = new TreeNode(preorder[idx]); 
         int inIndex = 0;
-        for(int i = Start ; i <= End; i++ ){
+        for(int i = Start; i <= End; i++ ){
             if(inorder[i] == root.val){
              inIndex = i;
             }
         }
-        
         root.left = helper(preorder, inorder, Start, inIndex-1, idx +1);
         root.right = helper(preorder, inorder, inIndex+1, End, idx + inIndex - Start +1);
         return root;
