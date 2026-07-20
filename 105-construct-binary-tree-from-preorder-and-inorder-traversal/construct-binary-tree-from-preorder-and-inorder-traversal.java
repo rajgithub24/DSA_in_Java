@@ -18,7 +18,7 @@ class Solution {
         return helper(preorder, inorder, 0, inorder.length-1, 0);
     }
     private TreeNode helper(int[] preorder, int[] inorder, int Start, int End, int idx){
-        if(idx > preorder.length-1 || Start > End) return null;
+        if(Start > End) return null;
         TreeNode root = new TreeNode(preorder[idx]);
         
         int inIndex = 0;
