@@ -17,7 +17,7 @@ class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return helper(preorder, inorder, 0, inorder.length-1, 0);
     }
-    public TreeNode helper(int[] preorder, int[] inorder, int Start, int End, int idx){
+    private TreeNode helper(int[] preorder, int[] inorder, int Start, int End, int idx){
         if(idx > preorder.length-1 || Start > End) return null;
         TreeNode root = new TreeNode(preorder[idx]);
         
