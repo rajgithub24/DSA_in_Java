@@ -17,7 +17,7 @@ class Solution {
     int pos = 0;
     public int kthSmallest(TreeNode root, int k) {
         TreeNode node = inorder(root, k);
-        if(node == null){
+        if(node == null) {
             return -1;
         }
         return node.val;
@@ -25,13 +25,9 @@ class Solution {
     public TreeNode inorder(TreeNode root, int k){
         if(root == null) return root;
         TreeNode left = inorder(root.left, k);
-        if(left!=null){
-            return left;
-        }
+        if(left != null) return left;
         pos++;
-        if(pos==k){
-            return root;
-        }
+        if(pos==k) return root;
         return inorder(root.right, k);
     }
 }
