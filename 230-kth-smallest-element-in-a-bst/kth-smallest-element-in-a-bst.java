@@ -19,9 +19,8 @@ class Solution {
         TreeNode node = inorder(root, k);
         if(node == null){
             return -1;
-        } else{
-            return node.val;
         }
+        return node.val;
     }
     public TreeNode inorder(TreeNode root, int k){
         if(root == null) return root;
