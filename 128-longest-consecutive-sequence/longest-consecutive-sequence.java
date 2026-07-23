@@ -5,7 +5,7 @@ class Solution {
             set.add(num);
         }
         int longest = 0;
-        for(int num : set){
+        for(int num: set){
             if(!set.contains(num-1)){
                 int curr = num;
                 int length = 1;
@@ -17,6 +17,6 @@ class Solution {
             }
         }
         return longest;
-        
+
     }
 }
