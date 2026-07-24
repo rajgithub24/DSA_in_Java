@@ -7,12 +7,12 @@ class Solution {
             s1Map[s1.charAt(i) - 'a']++;
             s2Map[s2.charAt(i) - 'a']++;
         }
-        for(int i=0; i< s2.length()- s1.length(); i++){
+        for(int i=0; i<s2.length() - s1.length(); i++){
             if(match(s1Map, s2Map)){
                 return true;
             }
             s2Map[s2.charAt(i + s1.length()) - 'a']++;
-            s2Map[s2.charAt(i)- 'a']--;
+            s2Map[s2.charAt(i) - 'a']--;
         }
         return match(s1Map, s2Map);
     }
