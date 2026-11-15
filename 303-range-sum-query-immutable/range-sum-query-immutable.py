@@ -1,0 +1,17 @@
+class NumArray:
+
+    def __init__(self, nums: list[int]):
+        self.prefix = [0]
+        curr_sum = 0
+        for num in nums:
+            curr_sum += num
+            self.prefix.append(curr_sum)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.prefix[right + 1] - self.prefix[left]
+        
+
+
+# Your NumArray object will be instantiated and called as such:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(left,right)
