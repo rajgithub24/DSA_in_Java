@@ -9,10 +9,10 @@ class Solution:
         for _ in range(n):
             ptr = ptr.next
             
-        if not ptr:
+        if ptr is None:
             return head.next
             
-        while ptr.next:
+        while ptr.next is not None:
             ptr = ptr.next
             temp = temp.next
             
