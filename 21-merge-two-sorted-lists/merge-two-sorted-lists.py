@@ -15,9 +15,6 @@ class Solution:
                 merge.next = list2
                 list2 = list2.next
             merge = merge.next
-        if merge.next == list1 and list1 == None:
-            merge.next = list2
-        else:
-            merge.next = list1
+        merge.next = list1 or list2
         return dummy.next
         
