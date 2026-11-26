@@ -13,5 +13,4 @@ class Solution:
             prev = temp
             temp = front
         return prev
-
         
